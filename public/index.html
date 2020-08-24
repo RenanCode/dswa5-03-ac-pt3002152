@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+	<html ng-app='ifsp' class="ng-scope">
+		<head>
+			<style type="text/css">
+			   @charset "UTF: -8";[ng\cloak],[ng-cloak],[data-ng-cloak],.ng-cloak,.ng-hide:not(.ng-hide-animate){display:none
+			   !important;}ng\form{display:block;}
+			</style>
+			<meta name='viewport' content='width=device-width'>
+			<meta charset="utf-8">
+			<title>IFSP - Pirituba</title>
+			<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
+    		<link rel="stylesheet" href="vendor/bootstrap/dist/js/bootstrap.min.js">    
+		</head>
+		<body class="container">
+   		   	<!-- ngView: -->
+			<div ng-view class="ng-scope">
+				<div class="jumbotron ng-scope"> 
+					<img style="float:left;" src="img/logo.jpeg" alt=" ">
+					<h1 class="text-center">Bem vindo ao IFSP  - Instituto Federal de São Paulo</h1>
+					<h2 class="text-center">Lista de contatos</h2>
+				</div>
+                <nav class="navbar navbar-expand navbar-dark bg-dark ng-scope">
+				  <div class="collapse navbar-collapse" id="navbarsExemple02">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href= "#/contatos">
+								"Contatos "
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#/cursos">Cursos</a>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-md-0 ng-pristine ng-valid">
+						<input ng-model="filtro" type="search" placeholder="Digite parte do nome: " class="form-
+						control ng-pristine ng-untouched ng-valid">
+					</form>
+				</div>
+			</nav>
+			<br class="ng-scope">
+			<button class="btn btn-primary ng-scope" ng-click="incrementa()">Novo</button>
+			<p class="ng-binding ng-scope">Lista de Contatos cadastrados: 0</p>
+			<div class="table-responsive ng-scope">
+				<table class="table table-hover">
+ 					<tbody>
+				  		<tr>
+							<th>NOME</th>
+							<th>E-MAIL</th>
+				  			<th class="text-center">Ação</th>
+				  		</tr>
+				  		<!-- ngRepeat: contato in contatos | filter: filtro -->
+						<tr ng-repeat="contato in contatos | filter: filtro" class="ng-scope">
+							<td>
+								<a class="ng-binding">Renan Barbosa</a>
+							</td>
+							<td class="ng-binding">renan.barbosa@ifsp.edu.br</td>
+							<td class="text-center">
+								<button class="btn btn-warning">Remover</button>
+							</td>
+						</tr>
+						
+
+						<!-- ngRepeat: contato in contatos | filter: filtro -->
+						<tr ng-repeat="contato in contatos | filter: filtro" class="ng-scope">
+							<td>
+								<a class="ng-binding">Erika Fernandes</a>
+							</td>
+							<td class="ng-binding">erika.fernandes@ifsp.edu.br</td>
+							<td class="text-center">
+								<button class="btn btn-warning">Remover</button>
+							</td>
+						</tr>
+
+						<!-- ngRepeat: contato in contatos | filter: filtro -->
+						<tr ng-repeat="contato in contatos | filter: filtro" class="ng-scope">
+							<td>
+								<a class="ng-binding">Magali Maria</a>
+							</td>
+							<td class="ng-binding">mm.maria@ifsp.edu.br</td>
+							<td class="text-center">
+								<button class="btn btn-warning">Remover</button>
+							</td>
+						</tr>
+						<!-- ngRepeat: contato in contatos | filter: filtro -->
+
+ 					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="vendor/angular/angular.js"></script>
+		<script src="vendor/angular-route/angular-route.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/controllers/ContatosController.js"></script>
+		<script src="js/controllers/ContatoController.js"></script>
+		<script src="js/controllers/CursosController.js"></script>
+		<script src="js/controllers/CursoController.js"></script>
+	</body>
+</html>
